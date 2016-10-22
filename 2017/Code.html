@@ -6,12 +6,23 @@
 	background-color: #ffffff;	  
 	  }
 	  .background {
-		padding: 16px;
-		overflow: auto;
-		font-size: 85%;
-		line-height: 1.45;
-		background-color: #f7f7f7;
-		border-radius: 3px;	  
+	padding: 16px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	background-color: #f7f7f7;
+	border-radius: 3px;	  
+	}
+	.fix {
+	display: inline;
+	max-width: auto;
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+	line-height: inherit;
+	word-wrap: normal;
+	background-color: transparent;
+	border: 0;	
 	}
 	  .black-border{
 		border-color: black;
@@ -33,7 +44,7 @@
 <h1 class="center">Ramen Robotics</h1>
 <h2 class="center">2017 Code</h2>
 	<center>
-	<code class="background"> 
+	<code class="background, fix"> 
 package org.usfirst.frc.team4461.robot;
 
 import edu.wpi.first.wpilibj.CANTalon;
