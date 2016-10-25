@@ -1,7 +1,65 @@
 <html>
-<title> About Us </title>
-<p> hi </p>
+<head>
+ <title>
+  FRC4461 Ramen~About Us
+ </title>  
+<style>
+	
+body {
+	margin:0;
+}
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 
+li {
+    float: left;
+}
 
-</html>
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+	
+.black-border{
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 80%;
+	  }
+
+.center {
+text-align: center;	 
+}
+	
+h1 {
+    text-align: center
+}
+</style>
+</head>
+<body>
+  <ul>
+    <li><a class="active" href="/index.html">Home</a></li>
+    <li><a href="/about_us.html">About Us</a></li>
+    <li><a href="/wishlist.html">Wishlist</a></li>
+    <li><a href="/test.html">Test</a></li>
+  </ul>
