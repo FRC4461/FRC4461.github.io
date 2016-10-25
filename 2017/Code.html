@@ -2,39 +2,19 @@
 <head>
 <title>FRC4461 Ramen</title>  
 <style>
-	  body {
-	background-color: #ffffff;	  
+	.black-border{
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 80%;
 	  }
-	  .background {
-	padding: 16px;
-	overflow: auto;
-	font-size: 85%;
-	line-height: 1.45;
-	background-color: #f7f7f7;
-	border-radius: 3px;	  
-	}
-	.fix {
-	display: inline;
-	max-width: auto;
-	padding: 0;
-	margin: 0;
-	overflow: visible;
-	line-height: inherit;
-	word-wrap: normal;
-	background-color: transparent;
-	border: 0;	
-	}
-	  .black-border{
-		border-color: black;
-		border-width: 3px;
-		border-style: solid;
-		border-radius: 80%;
+
+	.center {
+	text-align: center;	 
 	  }
-	body {
-	font-family: "Arial";	
-	  }
-	 .center {
-		text-align: center;	 
+	
+	h1 {
+	text-align: center
 	  }
 </style>
 </head>
@@ -42,141 +22,6 @@
 <a href="http://www.highlineschools.org/mountrainier"><img class="black-border" src="/Pictures/SchoolLogo.jpg" align="right" hspace="15"></a>
 <a href="/index.html"><img class="div, black-border" src="/Pictures/ramens.png" align="left" hspace="15"></a>
 <h1 class="center">Ramen Robotics</h1>
-<h2 class="center">2017 Code</h2>
-	<div class="background">
-	<center>
-	<code class="fix"> 
-package org.usfirst.frc.team4461.robot;
-
-import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
-
-/**	
- * 
- * @author Team 4461
- * @version Pre 0.1
- * 
- */
-
-public class Robot extends IterativeRobot {
 	
-    // Variables
-    boolean autoBreak = true; // This determines when to break in the autonomous code (see autonomousPeriodic)
-
-    // CANTalons
-    static CANTalon talon1 = new CANTalon(1);	//TANKDRIVE RIGHT MOTOR
-    static CANTalon talon2 = new CANTalon(2);	//TANKDRIVE RIGHT MOTOR
-    static CANTalon talon3 = new CANTalon(3);	//TANKDRIVE LEFT MOTOR
-    static CANTalon talon4 = new CANTalon(4);	//TANKDRIVE LEFT MOTOR
-    static CANTalon talon5 = new CANTalon(5);	//Right wheel
-    static CANTalon talon6 = new CANTalon(6);	//top
-    static CANTalon talon7 = new CANTalon(7);	//
-    static CANTalon talon8 = new CANTalon(8);	//
-    static CANTalon talon9 = new CANTalon(9);	//
-    static CANTalon talon10 = new CANTalon(10);	//
-    static CANTalon talon11 = new CANTalon(11);	//
-
-    // Robot Drive
-    RobotDrive chassis = new RobotDrive(ctalon1, ctalon2, ctalon3, ctalon4);
-   
-    // Joysticks
-    Joystick leftJoystick = new Joystick(0);
-    Joystick rightJoystick = new Joystick(1);
-    Joystick xBox = new Joystick(2);
-    
-    // Left Joystick Buttons
-    JoystickButton lButton1 = new JoystickButton(leftJoystick, 1);
-    JoystickButton lButton2 = new JoystickButton(leftJoystick, 2);
-    JoystickButton lButton3 = new JoystickButton(leftJoystick, 3);
-    JoystickButton lButton4 = new JoystickButton(leftJoystick, 4);
-    JoystickButton lButton5 = new JoystickButton(leftJoystick, 5);
-    JoystickButton lButton6 = new JoystickButton(leftJoystick, 6);
-    JoystickButton lButton7 = new JoystickButton(leftJoystick, 7);
-    JoystickButton lButton8 = new JoystickButton(leftJoystick, 8);
-    JoystickButton lButton9 = new JoystickButton(leftJoystick, 9);
-    JoystickButton lButton10 = new JoystickButton(leftJoystick, 10);
-    JoystickButton lButton11 = new JoystickButton(leftJoystick, 11);
-    
-    // Right Joystick Buttons
-    JoystickButton rButton1 = new JoystickButton(rightJoystick, 1);
-    JoystickButton rButton2 = new JoystickButton(rightJoystick, 2);
-    JoystickButton rButton3 = new JoystickButton(rightJoystick, 3);
-    JoystickButton rButton4 = new JoystickButton(rightJoystick, 4);
-    JoystickButton rButton5 = new JoystickButton(rightJoystick, 5);
-    JoystickButton rButton6 = new JoystickButton(rightJoystick, 6);
-    JoystickButton rButton7 = new JoystickButton(rightJoystick, 7);
-    JoystickButton rButton8 = new JoystickButton(rightJoystick, 8);
-    JoystickButton rButton9 = new JoystickButton(rightJoystick, 9);
-    JoystickButton rButton10 = new JoystickButton(rightJoystick, 10);
-    JoystickButton rButton11 = new JoystickButton(rightJoystick, 11);
-	
-    // Xbox Controller Buttons
-    JoystickButton xButton1 = new JoystickButton(xBox, 1);// A
-    JoystickButton xButton2 = new JoystickButton(xBox, 2);// B
-    JoystickButton xButton3 = new JoystickButton(xBox, 3);// X
-    JoystickButton xButton4 = new JoystickButton(xBox, 4);// Y
-    JoystickButton xButton5 = new JoystickButton(xBox, 5);// LB
-    JoystickButton xButton6 = new JoystickButton(xBox, 6);// RB
-    JoystickButton xButton7 = new JoystickButton(xBox, 7);// Back Button
-    JoystickButton xButton8 = new JoystickButton(xBox, 8);// Menu
-    JoystickButton xButton9 = new JoystickButton(xBox, 9);// LTrig pressed
-    JoystickButton xButton10 = new JoystickButton(xBox, 10);// RTrig pressed
-    
-    public void autonomousInit() {
-    	autoBreak = true; // Resets the autonomous break
-    	chassis.setSafetyEnabled(true); // Allows us to do autonomous
-    }//End autonomousInit
-    
-    public void autonomousPeriodic() {
-    	while(autoBreak) { // Put auto code above the "autoBreak = false;" line.
-
-    		autoBreak = false;
-    	}//End While
-    }//End autonomousPeriodic
-
-    public void teleopPeriodic() {
-    	chassis.tankDrive(leftJoystick.getY(), rightJoystick.getY());
-
-    	if(xButton1.get()){//Ball Retrive
-    		ctalon5.set(.75);
-    		talon1.set(.75);
-    	}//End if
-    	else if(xButton2.get()){//Half Power Shoot
-    		ctalon5.set(-.5);
-    		talon1.set(-.5);
-    	}
-    	else if(xButton3.get()){//Full Power Shoot
-    		ctalon5.set(-.8);
-    		talon1.set(-.8); 
-    	}
-    	else{
-    		ctalon5.set(0);
-    		talon1.set(0);
-    	}
-    	if(xButton1.get()){
-    		ctalon6.set(-.75);
-    	}
-    	else if(xButton4.get()){
-    		ctalon6.set(.5);
-    	}
-    	else{
-    		ctalon6.set(0);
-    	}
-    }//End teleopPeriodic
-
-    public void testPeriodic() {
-    	ctalon1.set(.1);
-    	ctalon2.set(.1);
-    	ctalon3.set(.1);
-    	ctalon4.set(.1);
-    }//End testPeriodic
-    
-}//End Class Robot
-	</code>
-	</center>
-	</div>
 </body>
 </html>
