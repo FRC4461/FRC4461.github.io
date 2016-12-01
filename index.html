@@ -1,54 +1,159 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
- <title>
-  FRC4461 Ramen
- </title>  
-<style>
-body {
-    margin:0;
-}
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 2px;
-    overflow: hidden;
-    background-color: #0d0863;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
+    <title>Ramen-4461</title>
 
-li {
-    float: left;
-}
+    <link rel="shortcut icon" href="/bootstrap/img/Ramen.ico"/>
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
-li a:hover:not(.active) {
-    background-color: #3b35b7;
-}
+    <!-- Theme CSS -->
+    <link href="css/grayscale.min.css" rel="stylesheet">
 
-.active {
-    background-color: #3b35b7;
-}
-</style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
-<body>
-  <ul>
-    <li><a class="active" href="/index.html">Home</a></li>
-    <li><a href="/about_us.html">About Us</a></li>
-    <li><a href="/wishlist.html">Wishlist</a></li>
-    <li><a href="/test.html">Test</a></li>
-    <li><a href="/contact_us.html">Contact Us</a></li>
-  </ul>
-<br><br>
-	<h1>Ramen 4461</h1>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="http://grrman.github.io/bootstrap/index.html">
+                    <i href="http://grrman.github.io/bootstrap/img/Ramen.ico"></i>Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About us</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#Wishlist">Wishlist</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Ramen</h1>
+                        <p class="intro-text">FRC-4461 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>About Us</h2>
+                <p>We are a group of self-inspired engineers and developers who go further every day, and we are always accepting newly inspired members everyday so if you wish to come you'll be warmly welcomed. Our name comes from a combination of the words "RAM" and "Engineer", this name was invented by our original members joking on how their work conditions were comparable to campus life and how college students.</p>                
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="Wishlist" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Wishlist</h2>
+                    <a href="http://grrman.github.io/bootstrap/wishlist.html" class="btn btn-default btn-lg">Wishlist</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row, gurman">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact us</h2>
+                <p class="btn btn-default btn-lg">Mentors</p>
+                <h6> </h6>
+                <h5><a href="mailto:christopher.calvin@highlineschools.org">Christopher Calvin</a></h5>
+                <h5><a href="mailto:Nicholas.Estrada@highlineschools.org">Nicholas Estrada</a></h5>
+                <p><br></p>
+                <h5 class="btn btn-default btn-lg">Students</h5>
+                <h6> </h6>
+                <h5><a href="mailto:mrhs4461@gmail.com">Susu Le</a></h5>
+                <h5><a href="mailto:Gurmanzg@gmail.com">Gurman Grewal</a></h5>
+                <p>Here are some places where you can stalk us!</p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/mrhs4461" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/FRC4461" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                </ul>
+                <p><br></p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <iframe width="100%" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJhfpe-ahbkFQRWosKBbZ4k74&key=AIzaSyCyOYrnsxvfJFmOCL-0nK1tWaOmTL_HDw0" allowfullscreen></iframe>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; FRC4461 Ramen MRHS 2016-2017</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/grayscale.min.js"></script>
+
 </body>
 </html>
