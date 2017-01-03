@@ -3,5 +3,5 @@ This website was designed by students ONLY!
 
 
 # Created by:
-Gurman Grewal
+Gurman Grewal;
 Vince Maranan
