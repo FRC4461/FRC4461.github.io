@@ -72,7 +72,7 @@
 </select>
 
 <button id="start">Start &raquo;</button>
-
+<button id="reset">Reset</button>
 <script>
 // Using multiple unit types within one animation.
 $("#start").click(function(){
@@ -84,32 +84,69 @@ $("#start").click(function(){
     $("#robot").animate({"top": "20%", "left": "64%"}, "slow");
     if(objective == "crossLine"){
       sidePosCrossLine();
+    } else if(objective == "leftScale"){
+      leftPosLeftScale();
+    } else if(objective == "leftSwitch"){
+      leftPosLeftSwitch();
+    } else if(objective == "rightScale"){
+      leftPosRightScale()
+    } else if(objective == "rightSwitch"){
+      leftPosRightSwitch();
+    } else{
+      console.log("this is not possible my dude");
+    }
+  } else if(pos=="middlePosition"){
+    $("#robot").animate({"top": "50%", "left": "64%"}, "slow");
+    console.log("doot");
+    if(objective == "crossLine"){
+      middlePosCrossLine();
+    } else if(objective == "leftScale"){
+      middlePosLeftScale();
+    } else if(objective == "leftSwitch"){
+      middlePosLeftSwitch();
+    } else if(objective == "rightScale"){
+      middlePosRightScale()
+    } else if(objective == "rightSwitch"){
+      middlePosRightSwitch();
+    } else{
+      console.log("this is not possible my dude");
     }
     //animation
-  } else if(pos=="middlePosition"){
-    $("#robot").animate({"top": "40%", "left": "64%"}, "slow");
-    console.log("doot");
-    //animation
   } else if(pos=="rightPosition"){
-    $("#robot").animate({"top": "67%", "left": "64%"}, "slow");
+    $("#robot").animate({"top": "73%", "left": "64%"}, "slow");
     console.log("beep");
+    if(objective == "crossLine"){
+      sidePosCrossLine();
+    } else if(objective == "leftScale"){
+      rightPosLeftScale();
+    } else if(objective == "leftSwitch"){
+      rightPosLeftSwitch();
+    } else if(objective == "rightScale"){
+      rightPosRightScale()
+    } else if(objective == "rightSwitch"){
+      rightPosRightSwitch();
+    } else{
+      console.log("this is not possible my dude");
+    }
     //animation
   } else{
     console.log("this is kind of not possible");
   }
 });
 
+$( "#reset" ).click(function(){
+  var position = $("#positionDropDown").val();
+  reset(position);
+});
+
 function sidePosCrossLine(){
   console.log("i am going to the line");
-  $("#robot").animate({ "left": "+=120pt" }, "slow");
-}
-
-function middlePosCrossLine(){
-  // animation
+  $("#robot").animate({ "left": "+=15%" }, "slow");
 }
 
 function leftPosLeftScale(){
-  // animation
+  $("#robot").animate({ "left": "+=30%" }, "slow");
+  $("#robot").rotate(90);
 }
 
 function leftPosRightScale(){
@@ -122,6 +159,29 @@ function leftPosLeftSwitch(){
 
 function leftPosRightSwitch(){
   // animation
+}
+function middlePosCrossLine(){
+  $("#robot").animate({ "left": "+=5%" }, "slow");
+  $("#robot").animate({ "top": "+=30%" }, "slow");
+  $("#robot").animate({ "left": "+=10%" }, "slow");
+
+  // animation
+}
+
+function middlePosLeftScale(){
+
+}
+
+function middlePosLeftSwitch(){
+
+}
+
+function middlePosRightScale(){
+
+}
+
+function middlePosRightSwitch(){
+
 }
 
 function rightPosLeftScale(){
@@ -138,6 +198,10 @@ function rightPosLeftSwitch(){
 
 function rightPosRightSwitch(){
   // animation
+}
+
+function reset(){
+  $("#robot").animate({"top": "20%", "left": "64%"}, 0);
 }
 </script>
 
