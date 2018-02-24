@@ -81,11 +81,17 @@ $("#start").click(function(){
 
   if(pos == "leftPosition"){
     console.log("honk");
+    $("#robot").animate({"top": "20%", "left": "64%"}, "slow");
+    if(objective == "crossLine"){
+      sidePosCrossLine();
+    }
     //animation
-  } elseif(pos=="middlePosition"){
+  } else if(pos=="middlePosition"){
+    $("#robot").animate({"top": "40%", "left": "64%"}, "slow");
     console.log("doot");
     //animation
-  } elseif(pos=="rightPosition"){
+  } else if(pos=="rightPosition"){
+    $("#robot").animate({"top": "67%", "left": "64%"}, "slow");
     console.log("beep");
     //animation
   } else{
@@ -94,7 +100,8 @@ $("#start").click(function(){
 });
 
 function sidePosCrossLine(){
-  // animation
+  console.log("i am going to the line");
+  $("#robot").animate({ "left": "+=120pt" }, "slow");
 }
 
 function middlePosCrossLine(){
