@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FRC 4461 Playbook</title>
+  <style>
+  div {
+    background-color: #bca;
+    width: 100px;
+    border: 1px solid green;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body background="/Pictures/field.png">
+
+<select id="positionDropDown">
+  <option value="leftPosition">Left Position</option>
+  <option value="middlePosition">Middle Position</option>
+  <option value="rightPosition">Right Position</option>
+</select>
+
+<select id="objectiveDropDown">
+  <option value="leftScale">Left Scale</option>
+  <option value="leftSwitch">Left Switch</option>
+  <option value="rightScale">Right Scale</option>
+  <option value="rightSwitch">Right Switch</option>
+</select>
+
+<button id="start">&raquo; Start</button>
+
+<script>
+// Using multiple unit types within one animation.
+var pos = $('#positionDropDown').val();;
+var objective = null;
+
+$( "#start" ).click(runAnimation(pos, objective));
+
+function runAnimation(var position, var objective){
+  switch(position){
+    case "leftPos":
+      // draw the robot in the leftPos
+    case "middlePos":
+      // draw the robot in the middlePos
+    case "rightPos":
+      // draw the robot in the rightPos
+    default:
+      function(){
+        alert("please select valid position and objective");
+    }
+  }
+}
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
