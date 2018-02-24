@@ -3,7 +3,8 @@ This website was designed by students ONLY!
 
 
 # Created by:
-Gurman Grewal, and Vince Maranan
+Gurman Grewal, Vince Maranan, & Nicole Pham
+
 
 #Grayscale
 This website uses a template called Grayscale... Download it at https://startbootstrap.com/template-overviews/grayscale/
