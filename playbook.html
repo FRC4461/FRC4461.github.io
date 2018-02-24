@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <!-- Theme CSS -->
-    <link href="css/grayscale.min.css" rel="stylesheet">   
+    <link href="css/grayscale.min.css" rel="stylesheet">
 </head>
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.js"></script>
@@ -28,24 +28,35 @@
     <!-- Theme JavaScript -->
     <script src="js/grayscale.min.js"></script>
 <style>
-    .padding {
+    .map {
         padding: 35px;
-        margin: 35px;
-        border: 1.5px solid #4CAF50;
+        align: right;
+        position: relative;
+        top: 0;
+        left: 50%;
+    }
+    .fish{
+      position: absolute;
+      top: 20%;
+      left: 64%;
     }
 </style>
 <body>
-        <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-        <div class="row, gurman">
-            <div class="col-lg-8 col-lg-offset-2">
-                <p class="btn btn-default btn-lg"><a href="https://frc4461.github.io/">Home</a></p>
-            </div>
+
+  <!-- Home Button -->
+    <div class="row text-center">
+        <div class="col-lg-8 col-lg-offset-2">
+            <p class="btn btn-default btn-lg"><a href="https://frc4461.github.io/">Home</a></p>
         </div>
-    </section>
-    
-<img class="padding" src="/Pictures/field.png" width="685" height="560"> 
-    
+    </div>
+
+    <!-- Map & Robot Setup -->
+<div style="position: relative; left: 0; top: 0;">
+  <img class="map" src="/Pictures/field.png" width="50%" height="50%">
+  <img id="robot" class="fish" src="/Pictures/robots.jpg" width="50pt" height="50pt">
+</div>
+
+    <!-- Animation Selection -->
 <select id="positionDropDown">
   <option value="leftPosition">Left Position</option>
   <option value="middlePosition">Middle Position</option>
@@ -57,42 +68,80 @@
   <option value="leftSwitch">Left Switch</option>
   <option value="rightScale">Right Scale</option>
   <option value="rightSwitch">Right Switch</option>
+  <option value="crossLine">Cross Line</option>
 </select>
 
-<button id="start">&raquo; Start</button>
+<button id="start">Start &raquo;</button>
 
 <script>
 // Using multiple unit types within one animation.
-var pos = $('#positionDropDown').val();;
-var objective = null;
+$("#start").click(function(){
+  var pos = $("#positionDropDown").val();
+  var objective = $("#objectiveDropDown").val();
 
-$( "#start" ).click(runAnimation(pos, objective));
-
-function runAnimation(var position, var objective){
-  switch(position){
-    case "leftPos":
-      // draw the robot in the leftPos
-    case "middlePos":
-      // draw the robot in the middlePos
-    case "rightPos":
-      // draw the robot in the rightPos
-    default:
-      function(){
-        alert("please select valid position and objective");
-    }
+  if(pos == "leftPosition"){
+    console.log("honk");
+    //animation
+  } elseif(pos=="middlePosition"){
+    console.log("doot");
+    //animation
+  } elseif(pos=="rightPosition"){
+    console.log("beep");
+    //animation
+  } else{
+    console.log("this is kind of not possible");
   }
+});
+
+function sidePosCrossLine(){
+  // animation
 }
 
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+function middlePosCrossLine(){
+  // animation
+}
+
+function leftPosLeftScale(){
+  // animation
+}
+
+function leftPosRightScale(){
+  // animation
+}
+
+function leftPosLeftSwitch(){
+  // animation
+}
+
+function leftPosRightSwitch(){
+  // animation
+}
+
+function rightPosLeftScale(){
+  // animation
+}
+
+function rightPosRightScale(){
+  // animation
+}
+
+function rightPosLeftSwitch(){
+  // animation
+}
+
+function rightPosRightSwitch(){
+  // animation
 }
 </script>
+
 </body>
+
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; FRC4461 Ramen MRHS 2016-2017</p>
+            <p>Copyright &copy; FRC4461 Ramen MRHS 2016-2018</p>
             <p>501(c)(3) Non-Profit Orginization</p>
         </div>
     </footer>
+
 </html>
