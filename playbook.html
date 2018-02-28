@@ -36,7 +36,7 @@
     }
     .fish{
       position: absolute;
-      top: 20%;
+      top: 15%;
       left: 28%;
     }
     #positionDropDown,
@@ -77,6 +77,7 @@
       <option value="rightScale">Right Scale</option>
       <option value="rightSwitch">Right Switch</option>
       <option value="crossLine">Cross Line</option>
+      <option value="positionOnly">Position Only</option>
     </select>
 
     <button id="start" class="btn btn-default btn-lg">Start &raquo;</button>
@@ -84,6 +85,8 @@
   </div>
 </div>
 <script>
+var rotation = 0;
+
 // Using multiple unit types within one animation.
 $("#start").click(function(){
   var pos = $("#positionDropDown").val();
@@ -91,7 +94,8 @@ $("#start").click(function(){
 
   if(pos == "leftPosition"){
     console.log("honk");
-    $("#robot").animate({"top": "20%", "left": "28%"}, "slow");
+    $("#robot").animate({"top": "15%", "left": "28%"}, "slow");
+    $("#robot").css('transform','rotate(' + (rotation = 0) + 'deg)');;
     if(objective == "crossLine"){
       sidePosCrossLine();
     } else if(objective == "leftScale"){
@@ -107,6 +111,7 @@ $("#start").click(function(){
     }
   } else if(pos=="middlePosition"){
     $("#robot").animate({"top": "50%", "left": "28%"}, "slow");
+    $("#robot").css('transform','rotate(' + (rotation = 0) + 'deg)');;
     console.log("doot");
     if(objective == "crossLine"){
       middlePosCrossLine();
@@ -123,7 +128,8 @@ $("#start").click(function(){
     }
     //animation
   } else if(pos=="rightPosition"){
-    $("#robot").animate({"top": "73%", "left": "28%"}, "slow");
+    $("#robot").animate({"top": "77%", "left": "28%"}, "slow");
+    $("#robot").css('transform','rotate(' + (rotation = 0) + 'deg)');;
     console.log("beep");
     if(objective == "crossLine"){
       sidePosCrossLine();
@@ -146,7 +152,7 @@ $("#start").click(function(){
 
 $( "#reset" ).click(function(){
   var position = $("#positionDropDown").val();
-  reset(position);
+  reset();
 });
 
 function sidePosCrossLine(){
@@ -156,7 +162,10 @@ function sidePosCrossLine(){
 
 function leftPosLeftScale(){
   $("#robot").animate({ "left": "+=30%" }, "slow");
-  $("#robot").rotate(90);
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation += 90) + 'deg)');;
+    $(this).dequeue();
+  });
 }
 
 function leftPosRightScale(){
@@ -211,16 +220,9 @@ function rightPosRightSwitch(){
 }
 
 function reset(){
-  $("#robot").animate({"top": "20%", "left": "64%"}, 0);
+  $("#robot").animate({"top": "15%", "left": "28%"}, 0);
+  $("#robot").css('transform','rotate(' + (rotation = 0) + 'deg)');;
 }
-
-jQuery.fn.rotate = function(degrees) {
-    $(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
-                 '-moz-transform' : 'rotate('+ degrees +'deg)',
-                 '-ms-transform' : 'rotate('+ degrees +'deg)',
-                 'transform' : 'rotate('+ degrees +'deg)'});
-    return $(this);
-};
 </script>
 
 </body>
