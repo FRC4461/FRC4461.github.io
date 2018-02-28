@@ -29,19 +29,26 @@
     <script src="js/grayscale.min.js"></script>
 <style>
     .map {
-        padding: 35px;
+        padding: 10pt;
         align: right;
         position: relative;
         top: 0;
-        left: 50%;
+        left: 45%;
     }
     .fish{
       position: absolute;
       top: 20%;
       left: 64%;
     }
+    #positionDropDown,
+    #objectiveDropDown,
+    #start,
+    #reset{
+      padding: 5pt;
+      color: black;
+    }
 </style>
-<body>
+<body style="margin: 1%">
 
   <!-- Home Button -->
     <div class="row text-center">
@@ -57,6 +64,7 @@
 </div>
 
     <!-- Animation Selection -->
+<div>
 <select id="positionDropDown">
   <option value="leftPosition">Left Position</option>
   <option value="middlePosition">Middle Position</option>
@@ -73,6 +81,7 @@
 
 <button id="start">Start &raquo;</button>
 <button id="reset">Reset</button>
+</div>
 <script>
 // Using multiple unit types within one animation.
 $("#start").click(function(){
@@ -203,6 +212,14 @@ function rightPosRightSwitch(){
 function reset(){
   $("#robot").animate({"top": "20%", "left": "64%"}, 0);
 }
+
+jQuery.fn.rotate = function(degrees) {
+    $(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
+                 '-moz-transform' : 'rotate('+ degrees +'deg)',
+                 '-ms-transform' : 'rotate('+ degrees +'deg)',
+                 'transform' : 'rotate('+ degrees +'deg)'});
+    return $(this);
+};
 </script>
 
 </body>
