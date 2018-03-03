@@ -191,12 +191,12 @@ function middlePosCrossLine(){
     $(this).css('transform','rotate(' + (rotation -= 90) + 'deg)');
     $(this).dequeue();
   });
-  $("#robot").animate({ "top": "+=15em" }, "slow");
+  $("#robot").animate({ "top": "-=15em" }, "slow");
   $("#robot").queue(function() {
     $(this).css('transform','rotate(' + (rotation += 90) + 'deg)');
     $(this).dequeue();
   });
-  $("#robot").animate({ "left": "+=5em" }, "slow");
+  $("#robot").animate({ "left": "+=13em" }, "slow");
 
   // animation
 }
