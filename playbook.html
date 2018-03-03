@@ -36,8 +36,8 @@
     }
     .fish{
       position: absolute;
-      top: 15%;
-      left: 28%;
+      top: 6.5em;
+      left: 15.5em;
     }
     #positionDropDown,
     #objectiveDropDown,
@@ -94,7 +94,7 @@ $("#start").click(function(){
 
   if(pos == "leftPosition"){
     console.log("honk");
-    $("#robot").animate({"top": "15%", "left": "28%"}, "slow");
+    $("#robot").animate({"top": "6.5em", "left": "15.5em"}, "slow");
     $("#robot").css('transform','rotate(' + (rotation = 0) + 'deg)');;
     if(objective == "crossLine"){
       sidePosCrossLine();
@@ -107,10 +107,10 @@ $("#start").click(function(){
     } else if(objective == "rightSwitch"){
       leftPosRightSwitch();
     } else{
-      console.log("this is not possible my dude");
+      console.log("muevete por favor");
     }
   } else if(pos=="middlePosition"){
-    $("#robot").animate({"top": "50%", "left": "28%"}, "slow");
+    $("#robot").animate({"top": "20em", "left": "15.5em"}, "slow");
     $("#robot").css('transform','rotate(' + (rotation = 0) + 'deg)');;
     console.log("doot");
     if(objective == "crossLine"){
@@ -124,11 +124,11 @@ $("#start").click(function(){
     } else if(objective == "rightSwitch"){
       middlePosRightSwitch();
     } else{
-      console.log("this is not possible my dude");
+      console.log("muevete por favor");
     }
     //animation
   } else if(pos=="rightPosition"){
-    $("#robot").animate({"top": "77%", "left": "28%"}, "slow");
+    $("#robot").animate({"top": "32em", "left": "15.5em"}, "slow");
     $("#robot").css('transform','rotate(' + (rotation = 0) + 'deg)');;
     console.log("beep");
     if(objective == "crossLine"){
@@ -141,8 +141,8 @@ $("#start").click(function(){
       rightPosRightScale()
     } else if(objective == "rightSwitch"){
       rightPosRightSwitch();
-    } else{
-      console.log("this is not possible my dude");
+    } else {
+      console.log("muevete por favor");
     }
     //animation
   } else{
@@ -157,11 +157,11 @@ $( "#reset" ).click(function(){
 
 function sidePosCrossLine(){
   console.log("i am going to the line");
-  $("#robot").animate({ "left": "+=25%" }, "slow");
+  $("#robot").animate({ "left": "+=15em" }, "slow");
 }
 
 function leftPosLeftScale(){
-  $("#robot").animate({ "left": "+=30%" }, "slow");
+  $("#robot").animate({ "left": "+=33em" }, "slow");
   $("#robot").queue(function() {
     $(this).css('transform','rotate(' + (rotation += 90) + 'deg)');;
     $(this).dequeue();
@@ -173,6 +173,12 @@ function leftPosRightScale(){
 }
 
 function leftPosLeftSwitch(){
+  $("#robot").animate({ "left": "+=16em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation += 90) + 'deg)');
+    $(this).dequeue();
+  });
+  $("#robot").animate({"top": "+=2em"}, "slow");
   // animation
 }
 
@@ -180,27 +186,93 @@ function leftPosRightSwitch(){
   // animation
 }
 function middlePosCrossLine(){
-  $("#robot").animate({ "left": "+=5%" }, "slow");
-  $("#robot").animate({ "top": "+=30%" }, "slow");
-  $("#robot").animate({ "left": "+=10%" }, "slow");
+  $("#robot").animate({ "left": "+=5em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation -= 90) + 'deg)');
+    $(this).dequeue();
+  });
+  $("#robot").animate({ "top": "+=15em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation += 90) + 'deg)');
+    $(this).dequeue();
+  });
+  $("#robot").animate({ "left": "+=5em" }, "slow");
 
   // animation
 }
 
 function middlePosLeftScale(){
-
+  $("#robot").animate({ "left": "+=5em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation -= 90) + 'deg)');
+    $(this).dequeue();
+  });
+  $("#robot").animate({ "top": "-=15em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation += 90) + 'deg)');
+    $(this).dequeue();
+  });
+  $("#robot").animate({ "left": "+=28em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation += 90) + 'deg)');
+    $(this).dequeue();
+  });
 }
 
 function middlePosLeftSwitch(){
-
+  $("#robot").animate({ "left": "+=5em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation -= 90) + 'deg)');
+    $(this).dequeue();
+  });
+  $("#robot").animate({ "top": "-=15em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation += 90) + 'deg)');
+    $(this).dequeue();
+  });
+  $("#robot").animate({ "left": "+=11em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation += 90) + 'deg)');
+    $(this).dequeue();
+  });
+  $("#robot").animate({ "top": "+=4em" }, "slow");
 }
 
 function middlePosRightScale(){
-
+  $("#robot").animate({ "left": "+=5em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation += 90) + 'deg)');
+    $(this).dequeue();
+  });
+  $("#robot").animate({ "top": "+=13em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation -= 90) + 'deg)');
+    $(this).dequeue();
+  });
+  $("#robot").animate({ "left": "+=28em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation -= 90) + 'deg)');
+    $(this).dequeue();
+  });
 }
 
 function middlePosRightSwitch(){
-
+  $("#robot").animate({ "left": "+=5em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation += 90) + 'deg)');
+    $(this).dequeue();
+  });
+  $("#robot").animate({ "top": "+=14em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation -= 90) + 'deg)');
+    $(this).dequeue();
+  });
+  $("#robot").animate({ "left": "+=11em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation -= 90) + 'deg)');
+    $(this).dequeue();
+  });
+  $("#robot").animate({ "top": "-=4em" }, "slow");
 }
 
 function rightPosLeftScale(){
@@ -208,6 +280,11 @@ function rightPosLeftScale(){
 }
 
 function rightPosRightScale(){
+  $("#robot").animate({ "left": "+=33em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation += 270) + 'deg)');;
+    $(this).dequeue();
+  });
   // animation
 }
 
@@ -216,11 +293,17 @@ function rightPosLeftSwitch(){
 }
 
 function rightPosRightSwitch(){
+  $("#robot").animate({ "left": "+=16em" }, "slow");
+  $("#robot").queue(function() {
+    $(this).css('transform','rotate(' + (rotation += 270) + 'deg)');
+    $(this).dequeue();
+  });
+  $("#robot").animate({"top": "-=2em"}, "slow");
   // animation
 }
 
 function reset(){
-  $("#robot").animate({"top": "15%", "left": "28%"}, 0);
+  $("#robot").animate({"top": "6.5em", "left": "15.5em"}, 0);
   $("#robot").css('transform','rotate(' + (rotation = 0) + 'deg)');;
 }
 </script>
