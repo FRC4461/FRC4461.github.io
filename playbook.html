@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -35,20 +35,25 @@
     }
     .map {
         padding: 2em;
-        align: right;
         position: relative;
-        top: 0;
+        top: 5em;
+        left: 17em;
     }
     .fish{
       position: absolute;
-      top: 7.25em;
-      left: 16em;
+      top: 13em;
+      left: 33em;
     }
     #positionDropDown,
     #objectiveDropDown,
     #start,
     #reset{
       position: relative;
+    }
+
+    .placement{
+        top: 10em;
+        left: 25em;
     }
 </style>
 <body style="margin: 1%">
@@ -63,12 +68,12 @@
     <!-- Map & Robot Setup -->
 <div class="row">
   <div class="col-xs-8 col-md-6 col-lg-6">
-    <img class="map" src="/Pictures/field.png">
-    <img id="robot" class="fish" src="/Pictures/robots.jpg" width="50em" height="50em">
+    <img class="map" src="Pictures\field.png">
+    <img id="robot" class="fish" src="Pictures\robots.jpg" width="50em" height="50em">
   </div>
 
   <!-- Animation Selection -->
-  <div id="selector" class="col-xs-4 col-md-6 col-lg-6">
+  <div id="selector" class="col-xs-4 col-md-5 col-lg-3  placement">
     <select id="positionDropDown" class="btn btn-default btn-lg">
       <option value="leftPosition">Left Position</option>
       <option value="middlePosition">Middle Position</option>
@@ -85,7 +90,7 @@
     </select>
 
     <button id="start" class="btn btn-default btn-lg">Start &raquo;</button>
-    <button id="reset" class="btn btn-default btn-lg">Reset</button>
+    <button id="reset" class="btn btn-default btn-default">Reset</button>
   </div>
 </div>
 <script>
@@ -98,7 +103,7 @@ $("#start").click(function(){
 
   if(pos == "leftPosition"){
     console.log("honk");
-    $("#robot").animate({"top": "7.25em", "left": "16em"}, "slow");
+    $("#robot").animate({"top": "13em", "left": "33em"}, "slow");
     $("#robot").css('transform','rotate(' + (rotation = 0) + 'deg)');;
     if(objective == "crossLine"){
       sidePosCrossLine();
@@ -114,7 +119,7 @@ $("#start").click(function(){
       console.log("muevete por favor");
     }
   } else if(pos=="middlePosition"){
-    $("#robot").animate({"top": "21em", "left": "16em"}, "slow");
+    $("#robot").animate({"top": "27em", "left": "33em"}, "slow");
     $("#robot").css('transform','rotate(' + (rotation = 0) + 'deg)');;
     console.log("doot");
     if(objective == "crossLine"){
@@ -132,7 +137,7 @@ $("#start").click(function(){
     }
     //animation
   } else if(pos=="rightPosition"){
-    $("#robot").animate({"top": "32em", "left": "16em"}, "slow");
+    $("#robot").animate({"top": "38em", "left": "33em"}, "slow");
     $("#robot").css('transform','rotate(' + (rotation = 0) + 'deg)');;
     console.log("beep");
     if(objective == "crossLine"){
@@ -301,7 +306,7 @@ function rightPosRightScale(){
     $(this).css('transform','rotate(' + (rotation += 270) + 'deg)');;
     $(this).dequeue();
   });
-  // animation
+  // animation      
 }
 
 function rightPosLeftSwitch(){
@@ -319,7 +324,7 @@ function rightPosRightSwitch(){
 }
 
 function reset(){
-  $("#robot").animate({"top": "6.5em", "left": "15.5em"}, 0);
+  $("#robot").animate({"top": "13em", "left": "33em"}, 0);
   $("#robot").css('transform','rotate(' + (rotation = 0) + 'deg)');;
 }
 </script>

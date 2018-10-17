@@ -12,7 +12,7 @@ body {
   background-color: black;
 }
 .gurman{
-  padding-bottom: 100px;
+  padding-bottom: 0.5em;
 }
 html {
   width: 100%;
@@ -54,7 +54,7 @@ a:focus {
   color: #1186e3;
 }
 .gurman{
-  margin-bottom: 100;
+  margin-bottom: 1em;
 }
 .light {
   font-weight: 400;
@@ -242,8 +242,8 @@ a:focus {
 }
 #map {
   width: 100%;
-  height: 200px;
-  margin-top: 100px;
+  height: 200em;
+  margin-top: 200px;
 }
 @media (min-width: 767px) {
   .content-section {
